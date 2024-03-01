@@ -1,4 +1,5 @@
-let button = document.getElementsByTagName("button");
+let copyButton = document.getElementById("copyButton");
+let generateButton = document.getElementById("generateButton");
 let code = document.getElementById("Code");
 
 // variables 
@@ -25,6 +26,12 @@ let generateNew = () => {
     console.log(hexCode);
 };
 
+let copyContent = () => {
+    navigator.clipboard.writeText(code.innerHTML);
+};
 
 
-document.addEventListener("click", generateNew);
+
+generateButton.addEventListener("click", generateNew);
+copyButton.addEventListener("click", copyContent);
+
